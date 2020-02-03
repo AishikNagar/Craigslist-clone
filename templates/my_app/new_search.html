@@ -1,0 +1,28 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container-fluid">
+  <h2 class="text-center">{{search | title}}</h2>
+</div>
+
+<div class="row">
+  {% for post in final_postings %}
+  <!-- <p>{{post.0}}</p>
+<p>{{post.1}}</p>
+<p>{{post.2}}</p> -->
+
+  <div class="col s4">
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="{{post.3}}" alt="Card image cap" />
+      <div class="card-body">
+        <h5 class="card-title">{{post.0}}</h5>
+        <p class="card-text">
+          PRICE: {{post.2}}
+        </p>
+        <a href="{{post.1}}" class="btn btn-primary">Go to seller!</a>
+      </div>
+    </div>
+  </div>
+
+  {% endfor %}
+</div>
+
+{% endblock %}
